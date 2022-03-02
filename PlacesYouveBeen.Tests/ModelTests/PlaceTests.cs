@@ -6,12 +6,12 @@ using Places.Models;
 namespace Places.Tests
 {
   [TestClass]
-  public class PlaceTests //: IDisposable
+  public class PlaceTests : IDisposable
   {
-  //   public void Dispose()
-  //   {
-  //     Place.ClearAll();
-  //   }
+    public void Dispose()
+    {
+      Place.ClearAll();
+    }
   [TestMethod]
   public void PlaceConstructor_CreateInstanceOfPlace_Place()
   {
@@ -24,43 +24,43 @@ namespace Places.Tests
     {
       //Arrange
       string cityName = "tokyo";
-      Place tokyo = new Place(cityName);
+      Place newCity = new Place(cityName);
 
       //Act
-      string result = tokyo.City;
+      string result = newCity.City;
 
       //Assert
       Assert.AreEqual(cityName, result);
     }
 
-    // [TestMethod]
-    // public void SetDescription_SetDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string cityName = "Tokyo";
+      Place newCity = new Place(cityName);
 
-    //   //Act
-    //   string updatedDescription = "Do the dishes.";
-    //   newItem.Description = updatedDescription;
-    //   string result = newItem.Description;
+      //Act
+      string updatedCityName = "Kyoto";
+      newCity.City = updatedCityName;
+      string result = newCity.City;
 
-    //   //Assert
-    //   Assert.AreEqual(updatedDescription, result);
-    // }
+      //Assert
+      Assert.AreEqual(updatedCityName, result);
+    }
 
-    // [TestMethod]
-    // public void GetAll_ReturnsEmptyList_ItemList()
-    // {
-    //   //Arrange
-    //   List<Item> newList = new List<Item> { };
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_PlacesList()
+    {
+      //Arrange
+      List<Place> placesList = new List<Place> { };
 
-    //   //Act
-    //   List<Item> result = Item.GetAll();
+      //Act
+      List<Place> result = Place.GetAll();
 
-    //   //Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+      //Assert
+      CollectionAssert.AreEqual(placesList, result);
+    }
 
     // [TestMethod]
     // public void GetAll_ReturnsItems_ItemList()
