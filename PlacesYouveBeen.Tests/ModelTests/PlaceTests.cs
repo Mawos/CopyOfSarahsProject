@@ -62,22 +62,22 @@ namespace Places.Tests
       CollectionAssert.AreEqual(placesList, result);
     }
 
-    // [TestMethod]
-    // public void GetAll_ReturnsItems_ItemList()
-    // {
-    //   //Arrange
-    //   string description01 = "Walk the dog.";
-    //   string description02 = "Wash the dishes.";
-    //   Item newItem1 = new Item(description01);
-    //   Item newItem2 = new Item(description02);
-    //   List<Item> newList = new List<Item> { newItem1, newItem2 };
+    [TestMethod]
+    public void GetAll_ReturnsPlaces_PlaceList()
+    {
+      //Arrange
+      string cityName0 = "Kyoto";
+      string cityName1 = "Tokyo";
+      Place newCity0 = new Place(cityName0);
+      Place newCity1 = new Place(cityName1);
+      List<Place> placesList = new List<Place> { newCity0, newCity1 };
 
-    //   //Act
-    //   List<Item> result = Item.GetAll();
+      //Act
+      List<Place> result = Place.GetAll();
 
-    //   //Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+      //Assert
+      CollectionAssert.AreEqual(placesList, result);
+    }
 
     // [TestMethod]
     // public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()

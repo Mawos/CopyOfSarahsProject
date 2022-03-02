@@ -5,22 +5,22 @@ namespace Places.Models
   public class Place
   {
     public string City { get; set; }
-    private static List<Place> _placeList = new List<Place>{};
+    private static List<Place> _placesList = new List<Place>{};
 
     public Place (string city)
     {
       City = city;
-      _placeList.Add(this);
+      _placesList.Add(this);
     }
 
     public static void ClearAll()
     {
-      _placeList.Clear();
+      _placesList.Clear();
     }
 
     public static List<Place> GetAll()
     {
-      return _placeList;
+      return _placesList;
     }
 
   }
